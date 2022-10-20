@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
-
+import ThemeToggler from './ThemeToggler'
 const navigation = {
     categories: [
         {
@@ -290,26 +290,35 @@ export default function Example() {
                             </button>
 
                             {/* Logo */}
-                            <div className="ml-4 flex lg:ml-0 font-cursif">
+                            <div className="ml-4 flex lg:ml-0 font-cursif font-extrabold	">
                                 <a href="#">
-                                    <span className="sr-only">Your Company</span>
+                                    <span className="sr-only">
+                                        Emso and Co
+                                        Solicitors
+                                    </span>
                                 </a>
                                 <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                                <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                                   <br/>
+                                <a href="#" className="flex items-center text-gray-700 hover:text-gray-800">
                                     <Image
                                         className=" focus:ring-indigo-500 h-8 w-auto"
                                         src="/logo-bg.webp"
                                         alt="logo"
-                                        width={80}
+                                        width={70}
                                         height={48}
                                         priority
                                     />
-                                   Emso and Co
-                                   Solicitors
+                                    <span className="ml-3 italic block text-sm font-medium">
+                                        Emso and Co
+                                        Solicitors
+
+                                        </span>
                                 </a>
 
                             </div>
+                            <span className="h-6 w-px p-1 m-10" aria-hidden="true">
+
+                                <ThemeToggler />
+                                </span>
 
                             {/* Flyout menus */}
                             <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
@@ -413,22 +422,11 @@ export default function Example() {
 
                             <div className="ml-auto flex items-center">
                                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                                    <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                                        Sign in
-                                    </a>
                                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                                    <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                                        Create account
-                                    </a>
                                 </div>
 
                                 <div className="hidden lg:ml-8 lg:flex">
                                     <a href="#" className="flex items-center text-gray-700 hover:text-gray-800">
-                                        <img
-                                            src="https://tailwindui.com/img/flags/flag-canada.svg"
-                                            alt=""
-                                            className="block h-auto w-5 flex-shrink-0"
-                                        />
                                         <span className="ml-3 block text-sm font-medium">CAD</span>
                                         <span className="sr-only">, change currency</span>
                                     </a>
@@ -439,8 +437,6 @@ export default function Example() {
                                 </div>
 
                                 {/* Cart */}
-                                <div className="ml-4 flow-root lg:ml-6">
-                                </div>
                             </div>
                         </div>
                     </div>
