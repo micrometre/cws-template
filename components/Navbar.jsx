@@ -16,11 +16,11 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function NavBar() {
     const [open, setOpen] = useState(false)
 
     return (
-        <div className="bg-white">
+        <div className="bg-white   dark:bg-gray-50 ">
             {/* Mobile menu */}
             <Transition.Root show={open} as={Fragment}>
                 <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -70,29 +70,9 @@ export default function Example() {
                                     ))}
                                 </div>
 
-                                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                                    <div className="flow-root">
-                                        <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
-                                            Sign in
-                                        </a>
-                                    </div>
-                                    <div className="flow-root">
-                                        <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
-                                            Create account
-                                        </a>
-                                    </div>
-                                </div>
 
                                 <div className="border-t border-gray-200 py-6 px-4">
-                                    <a href="#" className="-m-2 flex items-center p-2">
-                                        <img
-                                            src="https://tailwindui.com/img/flags/flag-canada.svg"
-                                            alt=""
-                                            className="block h-auto w-5 flex-shrink-0"
-                                        />
-                                        <span className="ml-3 block text-base font-medium text-gray-900">CAD</span>
-                                        <span className="sr-only">, change currency</span>
-                                    </a>
+                                    <ThemeToggler />
                                 </div>
                             </Dialog.Panel>
                         </Transition.Child>
@@ -102,7 +82,7 @@ export default function Example() {
 
             <header className="relative bg-white ">
 
-                <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <nav aria-label="Top" className=" bg-white dark:bg-black mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="border-b border-gray-200">
                         <div className="flex h-16 items-center">
                             <button

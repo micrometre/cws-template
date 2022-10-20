@@ -1,6 +1,8 @@
 import Head from "next/head";
-import NavBar from "./Navbar";
 import buildData from "../data/data";
+import NavBar from "./Navbar";
+import Footer from "./Footer";
+
 
 export default function Layout({ children }) {
   return (
@@ -20,6 +22,7 @@ export default function Layout({ children }) {
       </Head>
       <NavBar />
       <main>{children}</main>
+      <Footer/>
     </div>
   );
 }
